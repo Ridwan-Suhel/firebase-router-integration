@@ -5,15 +5,27 @@ import Home from "./components/Header/Home/Home";
 import Login from "./components/Login/Login";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Checkout from "./components/Checkout/Checkout";
+import About from "./components/About/About";
+import NotFound from "./components/NotFound/NotFound";
+import ServiceDetails from "./components/ServiceDetails/ServiceDetails";
+import Footer from "./components/Footer/Footer";
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/home" element={<Home></Home>}></Route>
+        <Route path="/about" element={<About></About>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route
+          path="/service/:serviceId"
+          element={<ServiceDetails></ServiceDetails>}
+        ></Route>
         <Route path="/checkout" element={<Checkout></Checkout>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

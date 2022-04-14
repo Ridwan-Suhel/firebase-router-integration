@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../../Footer/Footer";
+import Experts from "../../Experts/Experts";
 import Services from "../../Services/Services";
 import Banner from "./Banner/Banner";
 
@@ -17,9 +17,9 @@ const Home = () => {
       <div className="container">
         <div className="my-5">
           <Services></Services>
+          <Experts></Experts>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };
