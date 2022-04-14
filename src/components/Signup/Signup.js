@@ -1,15 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const Signup = () => {
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
   const handleSignup = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    console.log(name, email, password);
+    createUserWithEmailAndPassword(email, password);
   };
+
   return (
     <div className="container py-5 mt-2">
       <div className="row justify-content-center">
