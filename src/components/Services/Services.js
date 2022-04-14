@@ -11,7 +11,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="service-wrapper">
+    <div className="service-wrapper" id="service">
       <p className="lead">We Have {services.length} Diference Services:</p>
       <div className="row">
         {services.map((service) => (
