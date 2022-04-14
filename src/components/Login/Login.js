@@ -45,7 +45,7 @@ const Login = () => {
               Login
             </Button>
           </Form>
-          <p className="lead">
+          <p className="lead mt-3">
             New to website?{" "}
             <Link to="/signup" className="text-danger">
               Please Register

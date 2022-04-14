@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 const Signup = () => {
   const handleSignup = (event) => {
     event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    console.log(name, email, password);
   };
   return (
     <div className="container py-5 mt-2">
@@ -49,7 +54,7 @@ const Signup = () => {
               />
             </div>
           </form>
-          <p className="lead">
+          <p className="lead mt-3">
             Have an account?{" "}
             <Link to="/login" className="text-danger">
               Please Login
