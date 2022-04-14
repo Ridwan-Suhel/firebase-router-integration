@@ -1,21 +1,22 @@
-import React from "react";
-import { Button, Card } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import Service from "../Service/Service";
 
 const Services = () => {
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    fetch("services.json")
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
+
   return (
-    <div className="row">
-      <div className="col-md-4">
-        <Card>
-          <Card.Img variant="top" src="holder.js/100px180" />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
+    <div className="service-wrapper">
+      <p className="lead">We Have {services.length} Diference Services:</p>
+      <div className="row">
+        {services.map((service) => (
+          <Service service={service} key={service.id}></Service>
+        ))}
       </div>
     </div>
   );
