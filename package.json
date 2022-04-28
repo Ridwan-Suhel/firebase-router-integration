@@ -1,5 +1,5 @@
 {
-  "name": "firebase-router-integration",
+  "name": "genius-car-service",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,6 +12,7 @@
     "react-bootstrap": "^2.2.3",
     "react-dom": "^18.0.0",
     "react-firebase-hooks": "^5.0.3",
+    "react-hook-form": "^7.30.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"

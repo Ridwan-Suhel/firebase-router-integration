@@ -11,6 +11,8 @@ import ServiceDetails from "./components/ServiceDetails/ServiceDetails";
 import Footer from "./components/Footer/Footer";
 import Signup from "./components/Signup/Signup";
 import RequireAuth from "./components/Login/RequireAuth/RequireAuth";
+import AddService from "./components/AddService/AddService";
+import ManageServices from "./components/ManageServices/ManageServices";
 function App() {
   return (
     <div>
@@ -30,6 +32,22 @@ function App() {
           element={
             <RequireAuth>
               <Checkout></Checkout>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/service/add"
+          element={
+            <RequireAuth>
+              <AddService></AddService>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/service/manage"
+          element={
+            <RequireAuth>
+              <ManageServices></ManageServices>
             </RequireAuth>
           }
         ></Route>
