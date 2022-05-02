@@ -13,6 +13,9 @@ import Signup from "./components/Signup/Signup";
 import RequireAuth from "./components/Login/RequireAuth/RequireAuth";
 import AddService from "./components/AddService/AddService";
 import ManageServices from "./components/ManageServices/ManageServices";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Order from "./components/Order/Order";
 function App() {
   return (
     <div>
@@ -24,11 +27,19 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route
+          path="/orders"
+          element={
+            <RequireAuth>
+              <Order></Order>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
           path="/service/:serviceId"
           element={<ServiceDetails></ServiceDetails>}
         ></Route>
         <Route
-          path="/checkout"
+          path="/checkout/:serviceId"
           element={
             <RequireAuth>
               <Checkout></Checkout>
@@ -51,8 +62,10 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
+      <ToastContainer />
       <Footer></Footer>
     </div>
   );
